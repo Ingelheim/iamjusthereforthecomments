@@ -1,7 +1,6 @@
 var parse, Post, Comment, currentPost;
 
 function init() {
-  // loader
   initializeParse();
   getPostWithComments();
 }
@@ -18,16 +17,13 @@ function reloadPage() {
 
 function addNewComment(text) {
   var comment = new Comment();
-  comment.set("text", text);
+  comment.set("text", $('<div/>').text(text).html());
   comment.set("post", currentPost);
   comment.save(null, {
     success: function(comment) {
-      // alert('New object created with objectId: ' + comment.id);
       reloadPage();
     },
-    error: function(comment, error) {
-      // alert('Failed to create new object, with error code: ' + error.message);
-    }
+    error: function(comment, error) {}
   });
 }
 
@@ -37,7 +33,7 @@ function addCurrentPost(title, imageURL) {
 }
 
 function addComment(text) {
-  $('.comments').append("<div class='comment-box'>" + text + "</div>");
+  $('.comments').append("<div class='comment-box'>" + $('<div/>').text(text).html() + "</div>");
 }
 
 function getAndAddAllCommentsFor(post) {
@@ -59,9 +55,7 @@ function getAndAddAllCommentsFor(post) {
       $(".wrapper").show();
       $(".loader").hide();
     },
-    error: function(error) {
-      // alert("Error: " + error.code + " " + error.message);
-    }
+    error: function(error) {}
   });
 }
 
@@ -77,9 +71,7 @@ function getPostWithComments(){
       addCurrentPost(title, url);
       getAndAddAllCommentsFor(currentPost);
     },
-    error: function(error) {
-      // alert("Error: " + error.code + " " + error.message);
-    }
+    error: function(error) {}
   });
 }
 
@@ -87,5 +79,5 @@ $(document).ready(function(){
   init();
   $('#comment').on('click', function() {
     addNewComment($('#commentText').val())
-  })
-})
+  });
+});
