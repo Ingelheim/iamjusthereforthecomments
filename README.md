@@ -1,2 +1,2 @@
 # iamjusthereforthecomments.com
-## One post per day. 100% user generated content
+## No content, just comments. One post per day.
