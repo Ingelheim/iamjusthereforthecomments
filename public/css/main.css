@@ -1,0 +1,39 @@
+
+/* DEPENDENCIES */
+@font-face { font-family: Overpass; src: url('css/fonts/Overpass-Regular.ttf'); }
+
+/* GENERAL */
+* {
+  font-family: Overpass, sans-serif;
+  font-weight: normal;
+}
+
+.body-wrapper {
+  width: 100%;
+}
+
+textarea {
+    resize: none;
+    width: 90%;
+    font-size: 1em;
+    font-weight: normal;
+    height: 100px;
+}
+
+/* POST */
+.post-image {
+  width: 98%;
+}
+
+/* COMMENT */
+.comment-box {
+  font-size: 1em;
+  text-align: left;
+  margin-left: auto;
+  margin-right: auto;
+  width: 95%;
+  border: 1px solid black;
+  margin-bottom: 10px;
+  padding: 10px;
+  word-wrap: break-word;
+}
